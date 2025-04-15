@@ -14,7 +14,7 @@ class _SplashscreenpageState extends State<Splashscreenpage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      context.go('/login'); 
+      context.go('/onboarding'); 
     });
   }
 
@@ -28,8 +28,7 @@ class _SplashscreenpageState extends State<Splashscreenpage> {
           height: 150,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/logo.png'),
-              fit: BoxFit.cover,
+              image: AssetImage('assets/img_logo_dark.png'),
             ),
           ),
         )

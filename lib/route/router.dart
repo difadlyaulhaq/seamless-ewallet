@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seamless/ui/pages/homepage.dart';
 import 'package:seamless/ui/pages/login.dart';
+import 'package:seamless/ui/pages/onboarding_page.dart';
 import 'package:seamless/ui/pages/splashscreenpage.dart';
 
 part 'router_name.dart';
@@ -16,6 +17,11 @@ GoRouter getRouter() {
         name: RoutesName.splashscreen,
         pageBuilder: (context, state) => const MaterialPage(child: Splashscreenpage()),
       ), 
+      GoRoute(
+        path: "/onboarding",
+        name: RoutesName.onboarding,
+        pageBuilder: (context, state) => const MaterialPage(child: OnboardingPage()),
+        ),
       GoRoute(
         path: '/login',
         name: RoutesName.login,
