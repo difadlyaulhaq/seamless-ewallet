@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:seamless/shared/theme.dart';
 
 class Splashscreenpage extends StatefulWidget {
   const Splashscreenpage({super.key});
@@ -20,16 +21,18 @@ class _SplashscreenpageState extends State<Splashscreenpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromRGBO(102, 42, 178, 1),
+      backgroundColor: darkBackgroundColor,
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Image.asset('assets/logo.png'),
-            const SizedBox(height: 20),
-            const CircularProgressIndicator(),
-          ],
-        ),
+        child: Container(
+          width: 150,
+          height: 150,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/logo.png'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        )
       ),
     );
   }
