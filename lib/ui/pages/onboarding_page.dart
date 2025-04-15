@@ -62,6 +62,24 @@ class OnboardingPage extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    
+                    TextButton(
+                      onPressed: () {
+                        // Navigate to the login page
+                      },
+                      child: Text(
+                        "Continue",
+                        style: blueTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: semiBold,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
               ],
               ),
             )
