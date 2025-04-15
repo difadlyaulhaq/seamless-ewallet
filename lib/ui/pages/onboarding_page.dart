@@ -79,7 +79,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 const SizedBox(height: 26),
                 Text(
                   subtitles[currentIndex], 
-                  style: greyTextStyle.copyWith(
+                  style: blackTextStyle.copyWith(
                     fontSize: 16, 
                     fontWeight: regular,
                   ),

@@ -24,11 +24,13 @@ class _SplashscreenpageState extends State<Splashscreenpage> {
       backgroundColor: darkBackgroundColor,
       body: Center(
         child: Container(
-          width: 150,
-          height: 150,
+          width: 350,
+          height: 350,
           decoration: const BoxDecoration(
             image: DecorationImage(
-              image: AssetImage('assets/img_logo_dark.png'),
+              image: AssetImage(
+                'assets/img_logo_seamless_dark.png',
+                ),
             ),
           ),
         )
