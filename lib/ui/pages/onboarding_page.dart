@@ -62,24 +62,61 @@ class OnboardingPage extends StatelessWidget {
                   ),
                   textAlign: TextAlign.center,
                 ),
+                const SizedBox(height: 30),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    
-                    TextButton(
-                      onPressed: () {
-                        // Navigate to the login page
-                      },
-                      child: Text(
-                        "Continue",
-                        style: blueTextStyle.copyWith(
-                          fontSize: 16,
-                          fontWeight: semiBold,
-                        ),
+                    Container(
+                      width: 12,
+                      height: 12,
+                      margin: EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: blueColor,
                       ),
                     ),
-                  ],
-                )
+                    Container(
+                      width: 12,
+                      height: 12,
+                      margin: EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: lightBackgroundColor,
+                      ),
+                    ),
+                    Container(
+                      width: 12,
+                      height: 12,
+                      margin: EdgeInsets.only(right: 10),
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        color: lightBackgroundColor,
+                      ),
+                    ),
+                    const Spacer(),
+                    Container(
+                      width: 150,
+                      height: 50,
+                      child: TextButton(
+                        onPressed: () {}, 
+                        style: TextButton.styleFrom(
+                          backgroundColor: purpleColor,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(56),
+                          ),
+                        ),
+                        child: Text(
+                          "Continue",
+                          style: whiteTextStyle.copyWith(
+                            fontSize: 16,
+                            fontWeight: semiBold,
+                          ),
+                      ),
+
+                    )
+                  )
+                ],
+              ) 
               ],
               ),
             )
