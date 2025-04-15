@@ -1,16 +1,64 @@
-# seamless
+# Seamless E-Wallet
 
-A new Flutter project.
+Seamless is a mobile application designed to provide a smooth and secure e-wallet experience. This project aims to simplify digital transactions and enhance user convenience.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **User Authentication**: Secure login and registration.
+- **Wallet Management**: Add, view, and manage funds.
+- **Transaction History**: Track all transactions in one place.
+- **QR Code Payments**: Fast and easy payments using QR codes.
+- **Notifications**: Stay updated with real-time alerts.
 
-A few resources to get you started if this is your first Flutter project:
+## Installation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/seamless.git
+    ```
+2. Navigate to the project directory:
+    ```bash
+    cd seamless
+    ```
+3. Install dependencies:
+    ```bash
+    npm install
+    ```
+4. Run the application:
+    ```bash
+    npm start
+    ```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Technologies Used
+
+- **Frontend**: React Native
+- **Backend**: Node.js, Express
+- **Database**: MongoDB
+- **Authentication**: JWT
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository.
+2. Create a new branch:
+    ```bash
+    git checkout -b feature-name
+    ```
+3. Commit your changes:
+    ```bash
+    git commit -m "Add feature-name"
+    ```
+4. Push to the branch:
+    ```bash
+    git push origin feature-name
+    ```
+5. Open a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
+## Contact
+
+For any inquiries, please contact [your-email@example.com].
