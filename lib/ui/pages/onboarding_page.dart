@@ -89,29 +89,13 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 currentIndex == 2 ?
                 Column(
                   children: [
-                    Text(
-                      "Get Started",
-                      style: blackTextStyle.copyWith(
-                        fontSize: 20,
-                        fontWeight: semiBold,
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    Text(
-                      "Create your account and start your journey",
-                      style: greyTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: regular,
-                      ),
-                      textAlign: TextAlign.center,
-                    ),
                     const SizedBox(height: 30),
                     Container(
                       width: 150,
                       height: 50,
                       child: TextButton(
                         onPressed: () {
-                          context.go('/login'); // Ganti dengan route yang sesuai
+                          context.go('/sign-up'); // Ganti dengan route yang sesuai
                         }, 
                         style: TextButton.styleFrom(
                           backgroundColor: purpleColor,
@@ -128,6 +112,29 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                     )
                   ),
+                  const SizedBox(height: 30),
+                  Container(
+                    width: 150,
+                    height: 50,
+                    child: TextButton(
+                      onPressed: () {
+                        context.go('/login'); // Ganti dengan route yang sesuai
+                      }, 
+                      style: TextButton.styleFrom(
+                        backgroundColor: lightBackgroundColor,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(56),
+                        ),
+                      ),
+                      child: Text(
+                        "Sign In",
+                        style: blackTextStyle.copyWith(
+                          fontSize: 16,
+                          fontWeight: semiBold,
+                        ),
+                    ),    
+                  ),
+                  )
                   ],
                 ):
                 Row(
