@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seamless/ui/pages/homepage.dart';
-import 'package:seamless/ui/pages/login.dart';
+import 'package:seamless/ui/pages/sign_in.dart';
 import 'package:seamless/ui/pages/onboarding_page.dart';
 import 'package:seamless/ui/pages/sign_up.dart';
 import 'package:seamless/ui/pages/splashscreenpage.dart';
