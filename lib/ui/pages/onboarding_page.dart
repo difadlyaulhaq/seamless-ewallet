@@ -89,8 +89,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 currentIndex == 2 ?
                 Column(
                   children: [
-                    const SizedBox(height: 30),
-                    Container(
+                    SizedBox(height: 30),
+                    SizedBox(
                       width: 150,
                       height: 50,
                       child: TextButton(
@@ -113,7 +113,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     )
                   ),
                   const SizedBox(height: 30),
-                  Container(
+                  SizedBox(
                     width: 150,
                     height: 50,
                     child: TextButton(
