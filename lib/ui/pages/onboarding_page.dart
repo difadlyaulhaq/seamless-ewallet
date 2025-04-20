@@ -168,7 +168,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                     ),
                     const Spacer(),
-                    Container(
+                    SizedBox(
                       width: 150,
                       height: 50,
                       child: TextButton(
