@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:seamless/shared/theme.dart';
 
 class LoginPage extends StatefulWidget {
@@ -102,9 +103,45 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text("Forgot Password?",
+                    style: blueTextStyle.copyWith(
+                        fontSize: 16,
+                        fontWeight: light,
+                      ),
+                      ),
+                  ),
+                ),
               ],
             ),
           ),
+          const SizedBox(height: 30),
+          SizedBox(      
+            width: 150,
+            height: 50,
+            child: TextButton(
+              onPressed: () {
+                  
+            }, 
+            style: TextButton.styleFrom(
+            backgroundColor: purpleColor,
+            shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(56),            
+            ),
+        ),
+            child: Text(
+              "Sign In",
+            style: whiteTextStyle.copyWith(
+                  fontSize: 16,
+                  fontWeight: semiBold,
+          ),
+        ),    
+      ),
+    )
         ],
       ),
     );
