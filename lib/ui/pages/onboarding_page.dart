@@ -114,6 +114,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   const SizedBox(height: 30),
                   SizedBox(
+                    
                     width: 150,
                     height: 50,
                     child: TextButton(
@@ -124,6 +125,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                         backgroundColor: lightBackgroundColor,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(56),
+                        
                         ),
                       ),
                       child: Text(
