@@ -120,30 +120,45 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           const SizedBox(height: 30),
-          SizedBox(      
-            width: 150,
-            height: 50,
-            child: TextButton(
-              onPressed: () {
-                  
-            }, 
-            style: TextButton.styleFrom(
-            backgroundColor: purpleColor,
-            shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(56),            
-            ),
-        ),
+            SizedBox(      
+              width: 150,
+              height: 50,
+              child: TextButton(
+                onPressed: () {
+                    
+              }, 
+              style: TextButton.styleFrom(
+              backgroundColor: purpleColor,
+              shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(56),            
+              ),
+          ),  
             child: Text(
               "Sign In",
             style: whiteTextStyle.copyWith(
                   fontSize: 16,
                   fontWeight: semiBold,
+                ),
+              ),    
+            ),
           ),
-        ),    
-      ),
-    )
+          const SizedBox(height: 15),
+         TextButton(
+            onPressed: () {
+              context.go('/sign-up'); // Ganti dengan route yang sesuai
+            },
+            child: Text(
+              "Don't have an account?",
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: light,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
         ],
       ),
     );
   }
 }
+ 
