@@ -37,3 +37,32 @@
                   );
                 }
               }
+
+
+class CostumTextButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+                    final String title;
+                    final double width;
+                    final double height;
+  const CostumTextButton({super.key,
+    this.onPressed,
+    required this.title,
+    this.width = double.infinity,
+    this.height = 50,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextButton(
+        onPressed: onPressed,
+            child: Text(
+              title,
+              style: blackTextStyle.copyWith(
+                fontSize: 16,
+                fontWeight: light,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          );
+  }
+}

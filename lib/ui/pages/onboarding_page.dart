@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seamless/shared/theme.dart';
+import 'package:seamless/ui/widgets/buttons.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
@@ -85,33 +86,18 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   ),
                   textAlign: TextAlign.center,
                 ),
-                const SizedBox(height: 30),
                 currentIndex == 2 ?
                 Column(
                   children: [
                     SizedBox(height: 30),
-                    SizedBox(
+                    CostumFilledButton(
+                      onPressed: () {
+                        context.go('/sign-up'); // Ganti dengan route yang sesuai
+                      }, 
+                      title: "Get Started",
                       width: 150,
                       height: 50,
-                      child: TextButton(
-                        onPressed: () {
-                          context.go('/sign-up'); // Ganti dengan route yang sesuai
-                        }, 
-                        style: TextButton.styleFrom(
-                          backgroundColor: purpleColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(56),
-                          ),
-                        ),
-                        child: Text(
-                          "Get Started",
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: semiBold,
-                          ),
-                      ),
-                    )
-                  ),
+                    ),
                   const SizedBox(height: 30),
                   SizedBox(
                     
@@ -170,31 +156,16 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                     ),
                     const Spacer(),
-                    SizedBox(
-                      width: 150,
-                      height: 50,
-                      child: TextButton(
-                        onPressed: () {
-                          carouselController.nextPage(
-                            duration: const Duration(milliseconds: 500),
-                            curve: Curves.easeIn,
-                          );
-                        }, 
-                        style: TextButton.styleFrom(
-                          backgroundColor: purpleColor,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(56),
-                          ),
-                        ),
-                        child: Text(
-                          "Continue",
-                          style: whiteTextStyle.copyWith(
-                            fontSize: 16,
-                            fontWeight: semiBold,
-                          ),
-                      ),
-
-                    )
+                  CostumFilledButton(
+                    title: "Continue",
+                    width: 150,
+                    height: 50,
+                    onPressed: () {
+                      carouselController.nextPage(
+                        duration: const Duration(milliseconds: 500),
+                        curve: Curves.easeIn,
+                      );
+                    },
                   )
                 ],
               ) 

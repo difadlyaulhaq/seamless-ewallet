@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seamless/shared/theme.dart';
+import 'package:seamless/ui/widgets/buttons.dart';
+import 'package:seamless/ui/widgets/forms.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -51,58 +53,21 @@ class _LoginPageState extends State<LoginPage> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Email Address",
-                      style: blackTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: medium,
-                      ),
-                    ),
                     const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
+                    CustomFormField(
+                      title: "Email Address",
+                      controller: TextEditingController(),
+                      onFieldSubmitted: (value) {
+                        // Handle email submission
+                      },
                     ),
                   ],
                 ),
                 const SizedBox(height: 16),
-                // Password
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Password",
-                      style: blackTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      obscureText: isObscure,
-                      decoration: InputDecoration(
-                        suffixIcon: IconButton(
-                          icon: Icon(
-                            isObscure ? Icons.visibility_off : Icons.visibility,
-                          ),
-                          onPressed: () {
-                            setState(() {
-                              isObscure = !isObscure;
-                            });
-                          },
-                        ),
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                        contentPadding: const EdgeInsets.all(12),
-                      ),
-                    ),
-                  ],
-                ),
+               CustomFormField(
+                title: "password",
+                obscureText: true,
+               ), // Password
                 const SizedBox(height: 8),
                 Align(
                   alignment: Alignment.centerRight,
@@ -120,42 +85,21 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           const SizedBox(height: 30),
-            SizedBox(      
-              width: 150,
-              height: 50,
-              child: TextButton(
-                onPressed: () {
-                    
-              }, 
-              style: TextButton.styleFrom(
-              backgroundColor: purpleColor,
-              shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(56),            
-              ),
-          ),  
-            child: Text(
-              "Sign In",
-            style: whiteTextStyle.copyWith(
-                  fontSize: 16,
-                  fontWeight: semiBold,
-                ),
-              ),    
-            ),
+          CostumFilledButton(
+            onPressed: () {
+              context.go('/home'); // Ganti dengan route yang sesuai
+            },
+            title: "Sign In",
+            width: 200,
+            height: 50,
           ),
           const SizedBox(height: 15),
-         TextButton(
-            onPressed: () {
-              context.go('/sign-up'); // Ganti dengan route yang sesuai
-            },
-            child: Text(
-              "Don't have an account?",
-              style: blackTextStyle.copyWith(
-                fontSize: 16,
-                fontWeight: light,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
+         CostumTextButton(
+          title: "Create New Account", 
+          onPressed: () {
+           context.go('/sign-up'); // Ganti dengan route yang sesuai
+         }
+         )
         ],
       ),
     );
