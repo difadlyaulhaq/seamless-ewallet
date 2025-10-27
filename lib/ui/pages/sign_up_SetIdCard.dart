@@ -4,8 +4,8 @@ import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:seamless/ui/widgets/forms.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetidcardPage extends StatelessWidget {
+  const SignUpSetidcardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -42,44 +42,46 @@ class SignUpPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                // Email Address
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const SizedBox(height: 8),
-                    CustomFormField(title: "Full Name",
-                      controller: TextEditingController(),
-                      onFieldSubmitted: (value) {
-                        // Handle full name submission
-                      },
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: lightBackgroundColor,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset("assets/ic_upload.png",
+                //       width: 32,
+                //     ),
+                //   ),
+                // ),
+                //uploaded profile picture
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: const DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/img_profile.png"),
                     ),
-                    const SizedBox(height: 16),
-                    CustomFormField(
-                      title: "Email Address",
-                      controller: TextEditingController(),
-                      onFieldSubmitted: (value) {
-                        // Handle email submission
-                      },
-                    ),
-                  ],
+                  ),
+
                 ),
                 const SizedBox(height: 16),
-               CustomFormField(
-                title: "password",
-                obscureText: true,
-               ), // Password
-                const SizedBox(height: 8),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {},
-                    child: Text("Forgot Password?",
-                    style: blueTextStyle.copyWith(
-                        fontSize: 16,
-                        fontWeight: light,
-                      ),
-                      ),
+                Text(
+                  "Jhonathan",
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: medium,
                   ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(height: 50),
+                CustomFormField(
+                  title: "Set PIN (6 digit)",
+                  obscureText: true,
+                  controller: TextEditingController(),
                 ),
               ],
             ),
@@ -87,9 +89,9 @@ class SignUpPage extends StatelessWidget {
           const SizedBox(height: 30),
           CostumFilledButton(
             onPressed: () {
-              context.go('/set-profile'); // Ganti dengan route yang sesuai
+              context.go('/home'); // Ganti dengan route yang sesuai
             },
-            title: "Continue",
+            title: "Sign up",
             width: 200,
             height: 50,
           ),

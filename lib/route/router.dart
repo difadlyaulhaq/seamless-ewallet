@@ -4,6 +4,9 @@ import 'package:seamless/ui/pages/homepage.dart';
 import 'package:seamless/ui/pages/sign_in.dart';
 import 'package:seamless/ui/pages/onboarding_page.dart';
 import 'package:seamless/ui/pages/sign_up.dart';
+import 'package:seamless/ui/pages/sign_up_SetIdCard.dart';
+import 'package:seamless/ui/pages/sign_up_Setprofile.dart';
+import 'package:seamless/ui/pages/sign_up_Succed.dart';
 import 'package:seamless/ui/pages/splashscreenpage.dart';
 
 part 'router_name.dart';
@@ -37,6 +40,21 @@ GoRouter getRouter() {
       path: '/home', 
       name: RoutesName.home,
       pageBuilder: (context, state) => const MaterialPage(child: Homepage())
+      ),
+      GoRoute(
+        path: '/set-profile',
+        name: RoutesName.signUpUploadProfile,
+        pageBuilder: (context, state) => const MaterialPage(child: SignUpSetProfilePage()),
+      ),
+      GoRoute(
+        path: '/set-idcard',
+        name: RoutesName.signUpSetIdCard,
+        pageBuilder: (context, state) => const MaterialPage(child: SignUpSetidcardPage()),
+      ),
+      GoRoute(
+        path: '/sign-up-success',
+        name: RoutesName.signUpSuccess,
+        pageBuilder: (context, state) => const MaterialPage(child: SignUpSuccessPage()),
       ),
     ],
   );

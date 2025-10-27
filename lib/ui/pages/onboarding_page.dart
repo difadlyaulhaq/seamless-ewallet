@@ -125,6 +125,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   )
                   ],
                 ):
+                
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
