@@ -78,7 +78,7 @@ class _HomepageState extends State<Homepage> {
   }
   Widget buildfriedlytips() {
   return Container(
-    margin: const EdgeInsets.only(top: 30, bottom: 30), 
+    margin: const EdgeInsets.only(top: 30, bottom: 30, left: 30, right: 30), 
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start, 
       children: [
@@ -92,32 +92,32 @@ class _HomepageState extends State<Homepage> {
             ),
           ),
         ),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-           
-          padding: const EdgeInsets.only(left: 20),
-          child: Row(  
-            children: const [
-              
-              Buildfriedlytipsitem(
-                iconUrl: 'assets/img_tips1.png',
-                title: 'Save more with these simple tips',
-              ),
-              Buildfriedlytipsitem(
-                iconUrl: 'assets/img_tips2.png',
-                title: 'Save more with these simple tips',
-              ),
-              Buildfriedlytipsitem(
-                iconUrl: 'assets/img_tips3.png',
-                title: 'Save more with these simple tips',
-              ),
-              Buildfriedlytipsitem(
-                iconUrl: 'assets/img_tips4.png',
-                title: 'Save more with these simple tips',
-              ),
-               
-            ],
-          ),
+        Wrap (
+          spacing: 20,  
+          runSpacing: 20,
+          children: const [
+            Buildfriedlytipsitem(
+              imageUrl: 'assets/img_tips1.png',
+              title: 'Save more with these simple tips',
+              url: 'https://www.example.com/tips1',
+            ),
+            Buildfriedlytipsitem(
+              imageUrl: 'assets/img_tips2.png',
+              title: 'Save more with these simple tips',
+              url: 'https://www.example.com/tips2',
+            ),
+            Buildfriedlytipsitem(
+              imageUrl  : 'assets/img_tips3.png',
+              title: 'Save more with these simple tips',
+              url: 'https://www.example.com/tips3',
+            ),
+            Buildfriedlytipsitem(
+              imageUrl: 'assets/img_tips4.png',
+              title: 'Save more with these simple tips',
+              url: 'https://www.example.com/tips4',
+            ),
+             
+          ],
         )
       ],
     ),
