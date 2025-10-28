@@ -8,4 +8,8 @@ abstract class RoutesName {
   static const signUpUploadProfile = "upload-profile";
   static const signUpSetIdCard = "set-idcard";
   static const signUpSuccess = "sign-up-success";
+  static const topUp = "top-up"; 
+  static const withdraw = "withdraw";
+  static const more = "more";
+  static const send = "send";
 }

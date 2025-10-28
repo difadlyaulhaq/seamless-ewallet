@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
-import 'package:seamless/ui/widgets/forms.dart';
+
 
 class SignUpSuccessPage extends StatelessWidget {
   const SignUpSuccessPage({super.key});
