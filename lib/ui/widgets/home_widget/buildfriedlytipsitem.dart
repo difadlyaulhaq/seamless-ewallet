@@ -12,7 +12,7 @@ class Buildfriedlytipsitem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () async {
-        if (await canLaunchUrl(Uri.parse(url))) {
+        if (await canLaunchUrl(Uri.parse  (url))) {
           launchUrl(Uri.parse(url));
         }
       },
