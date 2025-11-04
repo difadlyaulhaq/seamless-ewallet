@@ -12,4 +12,5 @@ abstract class RoutesName {
   static const withdraw = "withdraw";
   static const more = "more";
   static const send = "send";
+  static const profile = "profile";
 }

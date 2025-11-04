@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:seamless/shared/theme.dart';
+import 'package:seamless/route/router.dart';
 Widget buildProfile () {
     return Container(
       margin: const EdgeInsets.only(top: 30),
@@ -23,37 +24,42 @@ Widget buildProfile () {
             ],
           ),
           const Spacer(),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/img_profile.png'),
-              ),
-            ),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                width: 16,
-                height: 16,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: whiteColor,
+          GestureDetector(
+            onTap: () {
+              // context.go('/profile');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/img_profile.png'),
                 ),
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
                 child: Container(
+                  width: 16,
+                  height: 16,
                   decoration: BoxDecoration(
                     shape: BoxShape.circle,
-                    color: lightBackgroundColor,
-                    border: Border.all(
-                      color: whiteColor,
-                      width: 2,
-                    ),
+                    color: whiteColor,
                   ),
-                  child: Icon(
-                    Icons.check_circle,
-                    color: greenColor,
-                    size: 14,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      color: lightBackgroundColor,
+                      border: Border.all(
+                        color: whiteColor,
+                        width: 2,
+                      ),
+                    ),
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenColor,
+                      size: 14,
+                    ),
                   ),
                 ),
               ),

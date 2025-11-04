@@ -15,6 +15,8 @@ import 'package:seamless/ui/pages/sendpage.dart';
 import 'package:seamless/ui/pages/withdrawpage.dart'; 
 import 'package:seamless/ui/pages/morepage.dart';
 
+import '../ui/pages/profilepage.dart';
+
 part 'router_name.dart';
 
 GoRouter getRouter() {
@@ -80,6 +82,12 @@ GoRouter getRouter() {
         name: RoutesName.send,
         pageBuilder: (context, state) => const MaterialPage(child: Sendpage()), // Ganti ke SendPage()
       ),
+    GoRoute(
+      path: '/profile',
+      name: RoutesName.profile,
+      pageBuilder: (context, state) => const MaterialPage(child: Profilepage()),
+    )
     ],
+
   );
 }

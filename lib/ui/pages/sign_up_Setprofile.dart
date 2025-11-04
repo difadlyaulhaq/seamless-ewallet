@@ -87,6 +87,15 @@ class SignUpSetProfilePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 15),
+             CostumFilledButton(
+            onPressed: () {
+              context.go('/set-idcard'); // Ganti dengan route yang sesuai
+            },
+            title: "Continue",
+            width: 200,
+            height: 50,
+          ),
+          const SizedBox(height: 15),
          CostumTextButton(
           title: "Already have an account?", 
           onPressed: () {
