@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:seamless/shared/theme.dart';
 
-Widget buildProfile (context) {
+Widget buildProfile (BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(top: 30),
       child: Row(
