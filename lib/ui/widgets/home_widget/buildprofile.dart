@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:seamless/shared/theme.dart';
-import 'package:seamless/route/router.dart';
-Widget buildProfile () {
+
+Widget buildProfile (context) {
     return Container(
       margin: const EdgeInsets.only(top: 30),
       child: Row(
@@ -26,7 +26,7 @@ Widget buildProfile () {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              // context.go('/profile');
+              context.go('/profile');
             },
             child: Container(
               width: 60,

@@ -14,7 +14,7 @@ class _SplashscreenpageState extends State<Splashscreenpage> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3), () {
-      context.go('/onboarding'); 
+      Navigator.pushNamed(context, '/onboarding');
     });
   }
 

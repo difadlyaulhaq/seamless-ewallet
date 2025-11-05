@@ -49,7 +49,7 @@ class _HomepageState extends State<Homepage> {
         padding: const EdgeInsets.all(20),
         child: ListView(
           children: [
-            buildProfile(),
+            buildProfile(context),
             buildwalletCard(),
             buildLevel(),
             buildServices(context),
