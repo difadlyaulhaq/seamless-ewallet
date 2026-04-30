@@ -45,7 +45,7 @@ class SignUpSuccessPage extends StatelessWidget {
             ),
           ),
          SizedBox(height: 30),
-          CostumFilledButton(
+          CustomFilledButton(
             onPressed: () {
               context.go('/sign-in'); // Ganti dengan route yang sesuai
             },

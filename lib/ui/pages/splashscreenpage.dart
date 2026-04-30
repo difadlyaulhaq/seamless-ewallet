@@ -9,7 +9,7 @@ class Splashscreenpage extends StatefulWidget {
   State<Splashscreenpage> createState() => _SplashscreenpageState();
 }
 
-class _SplashscreenpageState extends State<Splashscreenpage> {
+class _SplashscreenpageState extends State <Splashscreenpage> {
   @override
   void initState() {
     super.initState();

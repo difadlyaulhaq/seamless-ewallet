@@ -87,7 +87,7 @@ class SignUpSetidcardPage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 30),
-          CostumFilledButton(
+          CustomFilledButton(
             onPressed: () {
               context.go('/home'); // Ganti dengan route yang sesuai
             },
@@ -96,7 +96,7 @@ class SignUpSetidcardPage extends StatelessWidget {
             height: 50,
           ),
           const SizedBox(height: 15),
-         CostumTextButton(
+         CustomTextButton(
           title: "Already have an account?", 
           onPressed: () {
            context.go('/login'); // Ganti dengan route yang sesuai

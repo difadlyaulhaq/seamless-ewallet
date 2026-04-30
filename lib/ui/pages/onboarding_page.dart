@@ -90,7 +90,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 Column(
                   children: [
                     SizedBox(height: 30),
-                    CostumFilledButton(
+                    CustomFilledButton(
                       onPressed: () {
                         context.go('/sign-up'); // Ganti dengan route yang sesuai
                       }, 
@@ -157,7 +157,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                       ),
                     ),
                     const Spacer(),
-                  CostumFilledButton(
+                  CustomFilledButton(
                     title: "Continue",
                     width: 150,
                     height: 50,

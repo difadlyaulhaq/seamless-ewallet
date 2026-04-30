@@ -39,6 +39,12 @@ dependencies:
   carousel_slider: ^5.0.0
   stylish_bottom_bar: ^1.1.1
   url_launcher: ^6.3.2
+  another_flushbar: ^1.12.32
+  equatable: ^2.0.8
+  flutter_bloc: ^9.1.1
+  flutter_secure_storage: ^10.0.0
+  image_picker: ^1.2.2
+  intl: ^0.20.2
 dev_dependencies:
   flutter_test:
     sdk: flutter

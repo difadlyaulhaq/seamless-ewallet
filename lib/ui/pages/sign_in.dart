@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
             ),
           ),
           const SizedBox(height: 30),
-          CostumFilledButton(
+          CustomFilledButton(
             onPressed: () {
               context.go('/home'); // Ganti dengan route yang sesuai
             },
@@ -94,7 +94,7 @@ class _LoginPageState extends State<LoginPage> {
             height: 50,
           ),
           const SizedBox(height: 15),
-         CostumTextButton(
+         CustomTextButton(
           title: "Create New Account", 
           onPressed: () {
            context.go('/sign-up'); // Ganti dengan route yang sesuai
