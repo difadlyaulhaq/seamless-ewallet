@@ -3,6 +3,7 @@ import 'package:seamless/blocs/tips/tips_bloc.dart';
 import 'package:seamless/blocs/transaction/transaction_bloc.dart';
 import 'package:seamless/blocs/user/user_bloc.dart';
 import 'package:seamless/models/transfer_form_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/helpers.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/pages/transfer_amount_page.dart';
@@ -12,6 +13,7 @@ import 'package:seamless/ui/widgets/home_tips_item.dart';
 import 'package:seamless/ui/widgets/home_user_item.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -144,7 +146,7 @@ class HomePage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/profile');
+                    context.pushNamed(RoutesName.profile);
                   },
                   child: Container(
                     width: 60,
@@ -334,14 +336,14 @@ class HomePage extends StatelessWidget {
                 iconUrl: 'assets/ic_topup.png',
                 title: 'Top Up',
                 onTap: () {
-                  Navigator.pushNamed(context, '/topup');
+                  context.pushNamed(RoutesName.topup);
                 },
               ),
               HomeServiceItem(
                 iconUrl: 'assets/ic_send.png',
                 title: 'Send',
                 onTap: () {
-                  Navigator.pushNamed(context, '/transfer');
+                  context.pushNamed(RoutesName.transfer);
                 },
               ),
               HomeServiceItem(
@@ -444,14 +446,10 @@ class HomePage extends StatelessWidget {
                       children: state.users.map((user) {
                         return GestureDetector(
                           onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => TransferAmountPage(
-                                  data: TransferFormModel(
-                                    sendTo: user.username,
-                                  ),
-                                ),
+                            context.pushNamed(
+                              RoutesName.transferAmount,
+                              extra: TransferFormModel(
+                                sendTo: user.username,
                               ),
                             );
                           },
@@ -556,7 +554,7 @@ class MoreDialog extends StatelessWidget {
                   iconUrl: 'assets/ic_product_data.png',
                   title: 'Data',
                   onTap: () {
-                    Navigator.pushNamed(context, '/data-provider');
+                    context.pushNamed(RoutesName.dataProvider);
                   },
                 ),
                 HomeServiceItem(

@@ -4,11 +4,12 @@ import 'package:seamless/models/sign_in_form_model.dart';
 import 'package:seamless/models/sign_up_form_model.dart';
 import 'package:seamless/models/user_edit_form_model.dart';
 import 'package:seamless/models/user_model.dart';
+import 'package:seamless/shared/api_path.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:http/http.dart' as http;
 
 class AuthService {
-  final String baseUrl = 'https://bwabank.tech/api';
+  final String baseUrl = ApiPath.baseUrl;
 
   Future<bool> checkEmail(String email) async {
     try {
@@ -157,7 +158,29 @@ class AuthService {
     }
   }
 
-  @override
+  Future<void> logout() async {
+    try {
+      final token = await getToken();
+
+      final res = await http.post(
+        Uri.parse(
+          '$baseUrl/logout',
+        ),
+        headers: {
+          'Authorization': 'Bearer $token',
+        },
+      );
+
+      if (res.statusCode == 200) {
+        await clearLocalStorage();
+      } else {
+        throw jsonDecode(res.body)['message'];
+      }
+    } catch (e) {
+      rethrow;
+    }
+  }
+
   Future<void> clearLocalStorage() async {
     try {
       const storage = FlutterSecureStorage();

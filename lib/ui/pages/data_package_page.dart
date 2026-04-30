@@ -1,8 +1,10 @@
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/blocs/data_plan_form/data_plan_form_bloc.dart';
 import 'package:seamless/models/data_plan_form_model.dart';
 import 'package:seamless/models/data_plan_model.dart';
 import 'package:seamless/models/operator_card_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:seamless/ui/widgets/forms.dart';
@@ -44,8 +46,7 @@ class _DataPackagePageState extends State<DataPackagePage> {
                       selectedDataPlan!.price! * -1,
                     ),
                   );
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/data-success', (route) => false);
+              context.goNamed(RoutesName.dataSuccess);
             }
           },
           builder: (context, state) {
@@ -109,7 +110,7 @@ class _DataPackagePageState extends State<DataPackagePage> {
                   CustomFilledButton(
                     title: 'Continue',
                     onPressed: () async {
-                      if (await Navigator.pushNamed(context, '/pin') == true) {
+                      if (await context.pushNamed(RoutesName.pin) == true) {
                         final authState = context.read<AuthBloc>().state;
                         String pin = '';
                         if (authState is AuthSuccess) {

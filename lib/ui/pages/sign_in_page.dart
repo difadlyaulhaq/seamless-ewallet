@@ -1,10 +1,12 @@
 import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/models/sign_in_form_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:seamless/ui/widgets/forms.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -22,7 +24,7 @@ class _SignInPageState extends State<SignInPage> {
     return BlocConsumer<AuthBloc, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccess) {
-          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
+          context.goNamed(RoutesName.home);
         }
       },
       builder: (context, state) {

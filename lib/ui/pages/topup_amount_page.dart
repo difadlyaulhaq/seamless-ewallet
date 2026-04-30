@@ -1,6 +1,8 @@
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/blocs/topup_form/topup_form_bloc.dart';
 import 'package:seamless/models/topup_form_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -83,7 +85,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                       ),
                     ),
                   );
-              Navigator.pushNamed(context, '/topup-success');
+              context.pushNamed(RoutesName.topupSuccess);
             }
           },
           builder: (context, state) {
@@ -235,7 +237,7 @@ class _TopupAmountPageState extends State<TopupAmountPage> {
                 CustomFilledButton(
                   title: 'Checkout Now',
                   onPressed: () async {
-                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                    if (await context.pushNamed(RoutesName.pin) == true) {
                       final authState = context.read<AuthBloc>().state;
                       String pin = '';
                       if (authState is AuthSuccess) {

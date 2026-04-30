@@ -7,10 +7,11 @@ import 'package:seamless/models/topup_form_model.dart';
 import 'package:seamless/models/transaction_model.dart';
 import 'package:seamless/models/transfer_form_model.dart';
 import 'package:seamless/services/auth_service.dart';
+import 'package:seamless/shared/api_path.dart';
 import 'package:http/http.dart' as http;
 
 class TransactionService {
-  final String baseUrl = 'https://bwabank.tech/api';
+  final String baseUrl = ApiPath.baseUrl;
 
   Future<List<PaymentMethodModel>> getPaymentMethods() async {
     try {

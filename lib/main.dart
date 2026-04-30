@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/route/router.dart';
 
 
@@ -9,9 +11,16 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
-      routerConfig: getRouter(), // Menggunakan GoRouter sebagai konfigurasi routing
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => AuthBloc()..add(AuthGetCurrent()),
+        ),
+      ],
+      child: MaterialApp.router(
+        debugShowCheckedModeBanner: false,
+        routerConfig: getRouter(), // Menggunakan GoRouter sebagai konfigurasi routing
+      ),
     );
   }
 }

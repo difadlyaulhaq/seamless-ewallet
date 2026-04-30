@@ -1,3 +1,5 @@
+import 'package:go_router/go_router.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -24,7 +26,7 @@ class SignUpSuccessPage extends StatelessWidget {
               height: 26,
             ),
             Text(
-              'Grow your finance start\ntogether with us',
+              'Grow your finance by start\ntogether with us',
               style: greyTextStyle.copyWith(
                 fontSize: 16,
               ),
@@ -37,8 +39,7 @@ class SignUpSuccessPage extends StatelessWidget {
               width: 183,
               title: 'Get Started',
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, '/home', (route) => false);
+                context.goNamed(RoutesName.home);
               },
             ),
           ],

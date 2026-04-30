@@ -1,3 +1,5 @@
+import 'package:go_router/go_router.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -37,8 +39,7 @@ class DataSuccessPage extends StatelessWidget {
               width: 183,
               title: 'Back to Home',
               onPressed: () {
-                Navigator.pushNamedAndRemoveUntil(
-                    context, '/home', (route) => false);
+                context.goNamed(RoutesName.home);
               },
             ),
           ],

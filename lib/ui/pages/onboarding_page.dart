@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 
@@ -61,8 +62,8 @@ class _OnboardingPageState extends State<OnboardingPage> {
             ),
             const SizedBox(height: 80,),
             Container(
-              margin: EdgeInsets.symmetric(horizontal: 24),
-              padding: EdgeInsets.symmetric(vertical: 24, horizontal: 22),
+              margin: const EdgeInsets.symmetric(horizontal: 24),
+              padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 22),
               decoration: BoxDecoration(
                 color: whiteColor,
                 borderRadius: BorderRadius.circular(16),
@@ -89,10 +90,10 @@ class _OnboardingPageState extends State<OnboardingPage> {
                 currentIndex == 2 ?
                 Column(
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     CustomFilledButton(
                       onPressed: () {
-                        context.go('/sign-up'); // Ganti dengan route yang sesuai
+                        context.goNamed(RoutesName.signUp);
                       }, 
                       title: "Get Started",
                       width: 150,
@@ -105,7 +106,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     height: 50,
                     child: TextButton(
                       onPressed: () {
-                        context.go('/login'); // Ganti dengan route yang sesuai
+                        context.goNamed(RoutesName.signIn);
                       }, 
                       style: TextButton.styleFrom(
                         backgroundColor: lightBackgroundColor,
@@ -132,7 +133,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: currentIndex == 0 ? purpleColor : lightBackgroundColor,
@@ -141,7 +142,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: currentIndex == 1 ? purpleColor : lightBackgroundColor,
@@ -150,7 +151,7 @@ class _OnboardingPageState extends State<OnboardingPage> {
                     Container(
                       width: 12,
                       height: 12,
-                      margin: EdgeInsets.only(right: 10),
+                      margin: const EdgeInsets.only(right: 10),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: currentIndex == 2 ? purpleColor : lightBackgroundColor,

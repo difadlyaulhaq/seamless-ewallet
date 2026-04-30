@@ -64,3 +64,5 @@ class AuthUpdateBalance extends AuthEvent {
   @override
   List<Object> get props => [amount];
 }
+
+class AuthLogout extends AuthEvent {}

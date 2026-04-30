@@ -1,6 +1,8 @@
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/blocs/operator_card/operator_card_bloc.dart';
 import 'package:seamless/models/operator_card_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/pages/data_package_page.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
@@ -133,13 +135,9 @@ class _DataProviderPageState extends State<DataProviderPage> {
             CustomFilledButton(
               title: 'Continue',
               onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => DataPackagePage(
-                      operator: selectedOperator!,
-                    ),
-                  ),
+                context.pushNamed(
+                  RoutesName.dataPackage,
+                  extra: selectedOperator,
                 );
               },
             ),

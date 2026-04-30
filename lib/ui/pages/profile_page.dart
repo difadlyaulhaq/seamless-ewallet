@@ -1,4 +1,6 @@
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/pages/profile_edit_page.dart';
 import 'package:seamless/ui/pages/profile_edit_pin_page.dart';
@@ -18,7 +20,23 @@ class ProfilePage extends StatelessWidget {
           'My Profile',
         ),
       ),
-      body: BlocBuilder<AuthBloc, AuthState>(
+      body: BlocConsumer<AuthBloc, AuthState>(
+        listener: (context, state) {
+          if (state is AuthFailed) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text(
+                  state.e,
+                ),
+                backgroundColor: redColor,
+              ),
+            );
+          }
+
+          if (state is AuthInitial) {
+            context.goNamed(RoutesName.signIn);
+          }
+        },
         builder: (context, state) {
           if (state is AuthSuccess) {
             return ListView(
@@ -79,7 +97,7 @@ class ProfilePage extends StatelessWidget {
                         height: 16,
                       ),
                       Text(
-                        'Shayna Hanna',
+                        state.data.name!,
                         style: blackTextStyle.copyWith(
                           fontSize: 18,
                           fontWeight: medium,
@@ -92,15 +110,10 @@ class ProfilePage extends StatelessWidget {
                         iconUrl: 'assets/ic_edit_profile.png',
                         title: 'Edit Profile',
                         onTap: () async {
-                          if (await Navigator.pushNamed(context, '/pin') ==
-                              true) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfileEditPage(
-                                  user: state.data,
-                                ),
-                              ),
+                          if (await context.pushNamed(RoutesName.pin) == true) {
+                            context.pushNamed(
+                              RoutesName.profileEdit,
+                              extra: state.data,
                             );
                           }
                         },
@@ -109,15 +122,10 @@ class ProfilePage extends StatelessWidget {
                         iconUrl: 'assets/ic_pin.png',
                         title: 'My Pin',
                         onTap: () async {
-                          if (await Navigator.pushNamed(context, '/pin') ==
-                              true) {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => ProfileEditPinPage(
-                                  user: state.data,
-                                ),
-                              ),
+                          if (await context.pushNamed(RoutesName.pin) == true) {
+                            context.pushNamed(
+                              RoutesName.profileEditPin,
+                              extra: state.data,
                             );
                           }
                         },
@@ -140,7 +148,9 @@ class ProfilePage extends StatelessWidget {
                       ProfileMenuItem(
                         iconUrl: 'assets/ic_logout.png',
                         title: 'Log Out',
-                        onTap: () {},
+                        onTap: () {
+                          context.read<AuthBloc>().add(AuthLogout());
+                        },
                       ),
                     ],
                   ),

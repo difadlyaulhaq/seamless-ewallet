@@ -1,10 +1,11 @@
 import 'dart:convert';
 
 import 'package:seamless/services/auth_service.dart';
+import 'package:seamless/shared/api_path.dart';
 import 'package:http/http.dart' as http;
 
 class WalletService {
-  final String baseUrl = 'https://bwabank.tech/api';
+  final String baseUrl = ApiPath.baseUrl;
 
   Future<void> updatePin(String oldPin, String newPin) async {
     try {

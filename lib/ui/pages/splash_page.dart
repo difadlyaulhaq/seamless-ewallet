@@ -1,26 +1,40 @@
-import 'dart:async';
-
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
-import 'package:seamless/ui/pages/onboarding_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class SplashPage extends StatelessWidget {
+class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
+
+  @override
+  State<SplashPage> createState() => _SplashPageState();
+}
+
+class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      _handleNavigation();
+    });
+  }
+
+  void _handleNavigation() {
+    final state = context.read<AuthBloc>().state;
+    if (state is AuthSuccess) {
+      context.goNamed(RoutesName.home);
+    } else if (state is AuthFailed) {
+      context.goNamed(RoutesName.onboarding);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocListener<AuthBloc, AuthState>(
       listener: (context, state) {
-        if (state is AuthSuccess) {
-          Navigator.pushNamedAndRemoveUntil(context, '/home', (route) => false);
-        }
-
-        if (state is AuthFailed) {
-          Navigator.pushNamedAndRemoveUntil(
-              context, '/onboarding', (route) => false);
-        }
+        _handleNavigation();
       },
       child: Scaffold(
         backgroundColor: darkBackgroundColor,

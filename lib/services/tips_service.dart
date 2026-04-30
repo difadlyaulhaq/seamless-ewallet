@@ -2,10 +2,11 @@ import 'dart:convert';
 
 import 'package:seamless/models/tips_model.dart';
 import 'package:seamless/services/auth_service.dart';
+import 'package:seamless/shared/api_path.dart';
 import 'package:http/http.dart' as http;
 
 class TipsService {
-  final String baseUrl = 'https://bwabank.tech/api';
+  final String baseUrl = ApiPath.baseUrl;
 
   Future<List<TipsModel>> getTips() async {
     try {

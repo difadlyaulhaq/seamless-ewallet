@@ -27,7 +27,7 @@ Widget buildProfile (BuildContext context) {
           const Spacer(),
           GestureDetector(
             onTap: () {
-              context.go('/profile');
+              context.push('/profile');
             },
             child: Container(
               width: 60,

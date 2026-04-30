@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart'; 
 import 'package:seamless/ui/widgets/home_widget/homeserviceitem.dart';
+import 'package:seamless/ui/widgets/home_widget/more_dialog.dart';
  
  Widget buildServices(BuildContext context) {
      return Container(
@@ -25,8 +26,7 @@ import 'package:seamless/ui/widgets/home_widget/homeserviceitem.dart';
                  iconUrl: 'assets/ic_topup.png',
                  title: 'Top Up',
                  onTap: () {
-                   
-                   context.pushNamed(RoutesName.topUp);  
+                   context.pushNamed(RoutesName.topup);  
                  },
                ),
               //  const SizedBox(width: 20), 
@@ -34,7 +34,7 @@ import 'package:seamless/ui/widgets/home_widget/homeserviceitem.dart';
                  iconUrl: 'assets/ic_send.png',
                  title: 'Send',
                  onTap: () {
-                   context.pushNamed(RoutesName.send);
+                   context.pushNamed(RoutesName.transfer);
                  },
                ),
               //  const SizedBox(width: 20),
@@ -42,7 +42,7 @@ import 'package:seamless/ui/widgets/home_widget/homeserviceitem.dart';
                  iconUrl: 'assets/ic_withdraw.png',
                  title: 'Withdraw',
                  onTap: () { 
-                   context.pushNamed(RoutesName.withdraw);
+                   // TODO: Implement Withdraw
                  },
                ),
               //  const SizedBox(width: 20),
@@ -50,7 +50,10 @@ import 'package:seamless/ui/widgets/home_widget/homeserviceitem.dart';
                  iconUrl: 'assets/ic_more.png',
                  title: 'More',
                  onTap: () {
-                   context.pushNamed(RoutesName.more);
+                   showDialog(
+                     context: context,
+                     builder: (context) => const MoreDialog(),
+                   );
                  },
                ),
              ],

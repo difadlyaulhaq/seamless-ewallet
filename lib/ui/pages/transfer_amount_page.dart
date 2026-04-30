@@ -1,6 +1,8 @@
+import 'package:go_router/go_router.dart';
 import 'package:seamless/blocs/auth/auth_bloc.dart';
 import 'package:seamless/blocs/transfer_form/transfer_form_bloc.dart';
 import 'package:seamless/models/transfer_form_model.dart';
+import 'package:seamless/route/router.dart';
 import 'package:seamless/shared/theme.dart';
 import 'package:seamless/ui/widgets/buttons.dart';
 import 'package:flutter/material.dart';
@@ -83,8 +85,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                           -1,
                     ),
                   );
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/transfer-success', (route) => false);
+              context.goNamed(RoutesName.transferSuccess);
             }
           },
           builder: (context, state) {
@@ -234,7 +235,7 @@ class _TransferAmountPageState extends State<TransferAmountPage> {
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () async {
-                    if (await Navigator.pushNamed(context, '/pin') == true) {
+                    if (await context.pushNamed(RoutesName.pin) == true) {
                       final authState = context.read<AuthBloc>().state;
                       String pin = '';
                       if (authState is AuthSuccess) {
